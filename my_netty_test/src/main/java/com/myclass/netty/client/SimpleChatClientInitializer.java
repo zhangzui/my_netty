@@ -18,10 +18,12 @@ public class SimpleChatClientInitializer extends ChannelInitializer<NioSocketCha
     @Override
     protected void initChannel(NioSocketChannel channel) throws Exception {
         ChannelPipeline pipeline = channel.pipeline();
-        //消息转换
-        pipeline.addLast(new LineBasedFrameDecoder(1024));
+
+
         pipeline.addLast(new StringDecoder());
         pipeline.addLast(new StringEncoder());
+
+
         pipeline.addLast(new SimpleChatClientHandler());
     }
 }

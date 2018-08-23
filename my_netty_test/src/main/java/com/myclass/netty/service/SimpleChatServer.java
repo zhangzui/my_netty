@@ -41,9 +41,9 @@ public class SimpleChatServer {
             //?这里为什么设置两个group呢?
             serverBootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
-                    .childHandler(new SimpleChatServerInitializer())
-                    .option(ChannelOption.SO_BACKLOG, 128)
-                    .childOption(ChannelOption.SO_KEEPALIVE, true);
+                    .option(ChannelOption.SO_BACKLOG, 1024)
+                    .childOption(ChannelOption.SO_KEEPALIVE, true)
+                    .childHandler(new SimpleChatServerInitializer());
 
             logger.info("SimpleChatServer 启动了");
 

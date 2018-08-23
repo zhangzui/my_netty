@@ -6,6 +6,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.CharsetUtil;
 
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -20,5 +21,39 @@ public class SimpleChatServerHandler extends SimpleChannelInboundHandler<String>
         Scanner scan = new Scanner(System.in);
         String read = scan.nextLine();
         ctx.writeAndFlush(read);
+    }
+    /**
+     * channelAction
+     *
+     * channel 通道
+     * action  活跃的
+     *
+     * 当客户端主动链接服务端的链接后，这个通道就是活跃的了。也就是客户端与服务端建立了通信通道并且可以传输数据
+     *
+     */
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+
+
+        //通知您已经链接上客户端
+        //String str = "您已经开启与服务端链接"+" "+new Date()+" "+ctx.channel().localAddress();
+        //ctx.writeAndFlush(str);
+
+    }
+
+    /**
+     * channelInactive
+     *
+     * channel 	通道
+     * Inactive 不活跃的
+     *
+     * 当客户端主动断开服务端的链接后，这个通道就是不活跃的。也就是说客户端与服务端的关闭了通信通道并且不可以传输数据
+     *
+     */
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+
+       // System.out.println(ctx.channel().localAddress().toString()+" channelInactive");
+
     }
 }

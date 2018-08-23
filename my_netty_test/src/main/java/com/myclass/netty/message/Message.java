@@ -1,6 +1,7 @@
 package com.myclass.netty.message;
 
 /**
+ * https://blog.csdn.net/linsongbin1/article/details/77990882?reload
  * @author zhangzuizui
  * @date 2018/8/23 14:33
  */

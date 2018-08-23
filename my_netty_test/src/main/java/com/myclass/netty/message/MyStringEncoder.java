@@ -14,6 +14,7 @@ public class MyStringEncoder extends MessageToByteEncoder<String> {
   protected void encode(ChannelHandlerContext ctx, String msg, ByteBuf out) throws Exception {
 
     //out.add(ByteBufUtil.encodeString(ctx.alloc(), CharBuffer.wrap(msg), this.charset));
+    System.out.println("======encode==="+msg);
     out.writeBytes(Unpooled.copiedBuffer(msg, CharsetUtil.UTF_8));
     ctx.flush();
   }

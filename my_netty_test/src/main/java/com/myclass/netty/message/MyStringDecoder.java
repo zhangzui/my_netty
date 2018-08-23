@@ -14,6 +14,7 @@ public class MyStringDecoder extends ByteToMessageDecoder {
   protected void decode(ChannelHandlerContext ctx, ByteBuf byteBuf, List<Object> out)
       throws Exception {
     String message = byteBuf.toString(CharsetUtil.UTF_8);
+    System.out.println("========="+message);
     out.add(message);
   }
 }

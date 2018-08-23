@@ -24,7 +24,12 @@ public class SimpleChatClient {
                 .handler(new SimpleChatClientInitializer());
 
         ChannelFuture future = bootstrap.connect(new InetSocketAddress("localhost",8080));
+        try {
+            future.sync().channel();
+            future.channel().writeAndFlush("hello");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-        future.channel().writeAndFlush("hello");
     }
 }
