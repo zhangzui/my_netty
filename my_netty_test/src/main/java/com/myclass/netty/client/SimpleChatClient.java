@@ -21,11 +21,10 @@ public class SimpleChatClient {
 
         bootstrap.group(group)
                 .channel(NioSocketChannel.class)
-                .handler(new SimpleChatClientHandler());
+                .handler(new SimpleChatClientInitializer());
 
         ChannelFuture future = bootstrap.connect(new InetSocketAddress("localhost",8080));
 
-        future.channel().writeAndFlush(Unpooled.copiedBuffer("hello", CharsetUtil.UTF_8));
-
+        future.channel().writeAndFlush("hello");
     }
 }

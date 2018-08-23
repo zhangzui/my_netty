@@ -6,4 +6,35 @@ package com.myclass.netty.message;
  */
 public class Message {
 
+    public static final byte REQUEST = 1;
+    public static final byte RESPONSE = 2;
+    public static final byte ONEWAY = 3;
+    short version = 1;
+
+    short type;
+    byte[] data;
+
+    public short getVersion() {
+        return version;
+    }
+
+    public void setVersion(short version) {
+        this.version = version;
+    }
+
+    public short getType() {
+        return type;
+    }
+
+    public void setType(short type) {
+        this.type = type;
+    }
+
+    public byte[] getData() {
+        return data;
+    }
+
+    public void setData(byte[] data) {
+        this.data = data;
+    }
 }
