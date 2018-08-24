@@ -1,8 +1,5 @@
 package com.zz.mynetty.config.client.bean;
 
-import com.jd.overseas.configcenter.client.event.ConfigEvent;
-import com.jd.overseas.configcenter.client.event.EventType;
-import com.jd.overseas.configcenter.client.event.OneKeyListener;
 import com.zz.mynetty.config.client.annotation.MyListener;
 import com.zz.mynetty.config.client.process.MyConfigListener;
 import com.zz.mynetty.config.client.process.MyListenerMethodInvoke;
@@ -20,7 +17,6 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
